@@ -12,7 +12,12 @@
 #include "app.h"
 #include "can.h"
 #include "CO_app_STM32.h"
-#include "OD.h"
+
+#if IO_TYPE_DI
+#include <OD_Digital_Input/OD.h>
+#elif IO_TYPE_DO
+#include <OD_Digital_Output/OD.h>
+#endif
 
 typedef struct {
     GPIO_TypeDef *port;
@@ -110,7 +115,11 @@ void CanOpenTask(void *argument){
 	canOpenNodeSTM32.CANHandle = &hcan;
 	canOpenNodeSTM32.HWInitFunction = MX_CAN_Init;
 	canOpenNodeSTM32.timerHandle = &htim2;
+#if IO_TYPE_DI
 	canOpenNodeSTM32.desiredNodeID = 1;
+#elif IO_TYPE_DO
+	canOpenNodeSTM32.desiredNodeID = 2;
+#endif
 	canOpenNodeSTM32.baudrate = DEF_BITRATE;
 	canopen_app_init(&canOpenNodeSTM32);
 
@@ -132,15 +141,15 @@ void IOTask(void *argument)
                 IO_Value |= (1 << i);
             }
         }
+        sync_IO();
 #elif IO_TYPE_DO
+        sync_IO();
         for (int i = 0; i < 16; i++) {
             HAL_GPIO_WritePin(GPIO[i].port,
                               GPIO[i].pin,
                               (IO_Value & (1 << i)) ? GPIO_PIN_SET : GPIO_PIN_RESET);
         }
 #endif
-
-        sync_IO();
         osDelay(1);
     }
 }
@@ -149,7 +158,7 @@ void sync_IO(){
 #if IO_TYPE_DI
 	OD_RAM.x6000_digitalInput.value= IO_Value;
 #elif IO_TYPE_DO
-	IO_Value = 0;
+	IO_Value = OD_RAM.x6200_digitalOutput.value;
 #endif
 }
 #endif

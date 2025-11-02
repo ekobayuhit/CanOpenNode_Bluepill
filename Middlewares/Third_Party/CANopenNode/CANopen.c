@@ -32,7 +32,13 @@
 #define OD_GET(entry, index) co->config->ENTRY_##entry
 
 #else
-#include "OD.h"
+
+#if IO_TYPE_DI
+#include <OD_Digital_Input/OD.h>
+#elif IO_TYPE_DO
+#include <OD_Digital_Output/OD.h>
+#endif
+
 #define CO_GET_CO(obj) CO_##obj
 #define CO_GET_CNT(obj) OD_CNT_##obj
 #define OD_GET(entry, index) OD_ENTRY_##entry

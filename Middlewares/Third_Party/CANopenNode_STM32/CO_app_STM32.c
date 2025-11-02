@@ -30,7 +30,12 @@
 #include <stdio.h>
 
 #include "CO_storageBlank.h"
-#include "OD.h"
+
+#if IO_TYPE_DI
+#include <OD_Digital_Input/OD.h>
+#elif IO_TYPE_DO
+#include <OD_Digital_Output/OD.h>
+#endif
 
 CANopenNodeSTM32*
     canopenNodeSTM32; // It will be set by canopen_app_init and will be used across app to get access to CANOpen objects

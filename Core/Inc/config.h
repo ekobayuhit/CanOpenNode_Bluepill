@@ -21,7 +21,7 @@ typedef enum{
 /* ============================================
  * Macro Definitions
  * ============================================ */
-#define IO_TYPE_DI			(1)
+#define IO_TYPE_DI			(0)
 #define IO_USE_CANOPEN		(1)
 #define CAN_TEST			(0)
 

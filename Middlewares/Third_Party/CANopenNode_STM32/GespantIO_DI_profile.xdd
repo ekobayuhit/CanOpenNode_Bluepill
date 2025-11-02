@@ -15,7 +15,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="GespantIO_DI_profile.xdd" fileCreator="" fileCreationDate="2020-11-23" fileCreationTime="13:00:00.0000000+07:00" fileModifiedBy="BES" fileModificationDate="2025-11-02" fileModificationTime="18:26:28.9256332+07:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="GespantIO_DI_profile.xdd" fileCreator="" fileCreationDate="2020-11-23" fileCreationTime="13:00:00.0000000+07:00" fileModifiedBy="BES" fileModificationDate="2025-11-02" fileModificationTime="19:14:24.6234294+07:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <q1:DeviceIdentity>
         <q1:vendorName>Gespant-Winenerji</q1:vendorName>
         <q1:vendorID>1</q1:vendorID>
@@ -1484,7 +1484,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="GespantIO_DI_profile.xdd" fileCreator="" fileCreationDate="2020-11-23" fileCreationTime="13:00:00.0000000+07:00" fileModificationDate="2025-11-02" fileModificationTime="18:26:28.9256332+07:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="GespantIO_DI_profile.xdd" fileCreator="" fileCreationDate="2020-11-23" fileCreationTime="13:00:00.0000000+07:00" fileModificationDate="2025-11-02" fileModificationTime="19:14:24.6234294+07:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <ApplicationLayers>
         <q2:CANopenObjectList>
           <CANopenObject index="1000" name="Device type" objectType="7" PDOmapping="no" uniqueIDRef="UID_OBJ_1000" />
